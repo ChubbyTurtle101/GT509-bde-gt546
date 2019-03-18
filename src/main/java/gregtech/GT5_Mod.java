@@ -579,8 +579,8 @@ public class GT5_Mod implements IGT_Mod {
 
         gregtechproxy.onLoad();
         if (gregtechproxy.mSortToTheEnd) {
-            new GT_ItemIterator().run();
-            gregtechproxy.registerUnificationEntries();
+            //new GT_ItemIterator().run();
+            //gregtechproxy.registerUnificationEntries();
             new GT_FuelLoader().run();
         }
         GregTech_API.sLoadFinished = true;
@@ -605,10 +605,10 @@ public class GT5_Mod implements IGT_Mod {
         } catch (Throwable e) {e.printStackTrace(GT_Log.err);}
         gregtechproxy.onPostLoad();
         if (gregtechproxy.mSortToTheEnd) {
-            gregtechproxy.registerUnificationEntries();
+            //gregtechproxy.registerUnificationEntries();
         } else {
-            new GT_ItemIterator().run();
-            gregtechproxy.registerUnificationEntries();
+            //new GT_ItemIterator().run();
+            //gregtechproxy.registerUnificationEntries();
             new GT_FuelLoader().run();
         }
         new GT_BookAndLootLoader().run();
