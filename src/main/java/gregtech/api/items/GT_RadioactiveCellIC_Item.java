@@ -146,7 +146,7 @@ public class GT_RadioactiveCellIC_Item extends GT_RadioactiveCell_Item implement
         if (this.sRadiation > 0 && (entity instanceof EntityLivingBase)) {
             EntityLivingBase entityLiving = (EntityLivingBase) entity;
             if (!GregTech_API.mIC2Classic&&!ItemArmorHazmat.hasCompleteHazmat(entityLiving)) {
-                IC2Potion.radiation.applyTo(entityLiving, sRadiation * 20, sRadiation * 10);
+                //IC2Potion.radiation.applyTo(entityLiving, sRadiation * 20, sRadiation * 10);
             }
         }
     }
