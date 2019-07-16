@@ -3441,7 +3441,7 @@ if(Loader.isModLoaded("Railcraft")){
 	/**
 	 * Adds recipes related to producing Steel in a Primitive Blast Furnace.
 	 * Adds recipes related to roasting sulfuric ores and reducing oxidic ores in the Electric Blast Furnace.
-	 * Modified by ChubbyTurtle101 to correct recipes so they are more inline with GT6 processing and balance.
+	 * Modified by ChubbyTurtle101/DbpGaming to correct recipes so they are more inline with GT6 processing and balance.
 	 * Disabled unneeded CupricOxide, AntimonyTrioxide, CobaliteOxide, ArsenicTrioxide
 	 */
     private void addPyrometallurgicalRecipes() {
@@ -3449,7 +3449,11 @@ if(Loader.isModLoaded("Railcraft")){
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Iron.getDust(1), GT_Values.NI, 4, Materials.Steel.getIngots(1), GT_Values.NI, 7200);
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Iron.getBlocks(1), GT_Values.NI, 36, Materials.Steel.getIngots(9), GT_Values.NI, 64800);
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Steel.getDust(1), GT_Values.NI, 2, Materials.Steel.getIngots(1), GT_Values.NI, 7200);
-    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.DarkAsh.getDust(3), 4, Materials.Iron.getIngots(1), Materials.Ash.getDustTiny(2), 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.DarkAsh.getDust(3), 4, Materials.Iron.getIngots(3), Materials.Ash.getDustTiny(2), 7200);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), Materials.DarkAsh.getDust(1), 4, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(8), Materials.Carbon.getDust(1), 4, Materials.Iron.getIngots(2), GT_Values.NI, 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), Materials.DarkAsh.getDust(1), 4, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(8), Materials.Carbon.getDust(1), 4, Materials.Iron.getIngots(2), GT_Values.NI, 7200);
     	    	
     	//Carbothermic Reduction
     	int outputIngotAmount = GT_Mod.gregtechproxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre ? 2 : 3;
