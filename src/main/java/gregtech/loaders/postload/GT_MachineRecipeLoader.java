@@ -3449,10 +3449,26 @@ if(Loader.isModLoaded("Railcraft")){
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Iron.getDust(1), GT_Values.NI, 4, Materials.Steel.getIngots(1), GT_Values.NI, 7200);
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Iron.getBlocks(1), GT_Values.NI, 36, Materials.Steel.getIngots(9), GT_Values.NI, 64800);
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Steel.getDust(1), GT_Values.NI, 2, Materials.Steel.getIngots(1), GT_Values.NI, 7200);
-    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.DarkAsh.getDust(3), 4, Materials.Iron.getIngots(3), Materials.Ash.getDustTiny(2), 7200);
-		GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), Materials.DarkAsh.getDust(1), 4, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.DarkAsh.getDust(3), 4, Materials.Iron.getIngots(3), GT_Values.NI, 5400);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.Coal.getDust(3), 4, Materials.Iron.getIngots(3), GT_Values.NI, 10800);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), Materials.Coal.getGems(3), 4, Materials.Iron.getIngots(3), GT_Values.NI, 10800);
+    	if (Loader.isModLoaded("Railcraft")) { 
+    		GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(7), RailcraftToolItems.getCoalCoke(3), 4, Materials.Iron.getIngots(3), GT_Values.NI, 7200);
+    	}
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.Magnetite.getDust(14), Materials.Carbon.getDust(3), 4, Materials.Iron.getIngots(6), GT_Values.NI, 7200);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), Materials.DarkAsh.getDust(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 5400);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), Materials.Coal.getDust(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), Materials.Coal.getGems(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+		if (Loader.isModLoaded("Railcraft")) { 
+			GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(4), RailcraftToolItems.getCoalCoke(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 5400);
+		}
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.YellowLimonite.getDust(8), Materials.Carbon.getDust(1), 4, Materials.Iron.getIngots(2), GT_Values.NI, 7200);
-    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), Materials.DarkAsh.getDust(1), 4, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+    	GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), Materials.DarkAsh.getDust(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 5400);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), Materials.Coal.getDust(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), Materials.Coal.getGems(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 7200);
+		if (Loader.isModLoaded("Railcraft")) { 
+			GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(4), RailcraftToolItems.getCoalCoke(1), 2, Materials.Iron.getIngots(1), GT_Values.NI, 5400);
+		}
     	GT_Values.RA.addPrimitiveBlastRecipe(Materials.BrownLimonite.getDust(8), Materials.Carbon.getDust(1), 4, Materials.Iron.getIngots(2), GT_Values.NI, 7200);
     	    	
     	//Carbothermic Reduction
@@ -3464,7 +3480,7 @@ if(Loader.isModLoaded("Railcraft")){
 
     	GT_Values.RA.addBlastRecipe(Materials.BandedIron.getDust(2),          Materials.Carbon.getDust(1),      GT_Values.NF, Materials.CarbonDioxide.getGas(1000),  Materials.Iron.getIngots(outputIngotAmount),     Materials.Ash.getDustTiny(2), 240, 120, 1200);
     	GT_Values.RA.addBlastRecipe(Materials.Magnetite.getDust(14),           Materials.Carbon.getDust(3),      GT_Values.NF, Materials.CarbonDioxide.getGas(3000),  Materials.Iron.getIngots(6),     Materials.DarkAsh.getDustTiny(6), 240, 120, Materials.Iron.mBlastFurnaceTemp);
-    	GT_Values.RA.addBlastRecipe(Materials.Magnetite.getDust(7),           Materials.DarkAsh.getDust(3),      GT_Values.NF, Materials.CarbonDioxide.getGas(3000),  Materials.Iron.getIngots(6),     Materials.Ash.getDustTiny(6), 240, 120, Materials.Iron.mBlastFurnaceTemp);
+    	GT_Values.RA.addBlastRecipe(Materials.Magnetite.getDust(7),           Materials.DarkAsh.getDust(3),      GT_Values.NF, Materials.CarbonDioxide.getGas(3000),  Materials.Iron.getIngots(3),     Materials.Ash.getDustTiny(6), 240, 120, Materials.Iron.mBlastFurnaceTemp);
     	GT_Values.RA.addBlastRecipe(Materials.YellowLimonite.getDust(8),      Materials.Carbon.getDust(1),      GT_Values.NF, Materials.CarbonDioxide.getGas(1000),  Materials.Iron.getIngots(2),     Materials.DarkAsh.getDustTiny(2), 240, 120, Materials.Iron.mBlastFurnaceTemp);
     	GT_Values.RA.addBlastRecipe(Materials.YellowLimonite.getDust(4),      Materials.DarkAsh.getDust(1),      GT_Values.NF, Materials.CarbonDioxide.getGas(1000),  Materials.Iron.getIngots(1),     Materials.Ash.getDustTiny(2), 240, 120, Materials.Iron.mBlastFurnaceTemp);
     	GT_Values.RA.addBlastRecipe(Materials.BrownLimonite.getDust(8),       Materials.Carbon.getDust(1),      GT_Values.NF, Materials.CarbonDioxide.getGas(1000),  Materials.Iron.getIngots(2),     Materials.DarkAsh.getDustTiny(2), 240, 120, Materials.Iron.mBlastFurnaceTemp);
