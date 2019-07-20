@@ -226,14 +226,14 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
         for (FluidContainerRegistry.FluidContainerData tData : FluidContainerRegistry.getRegisteredFluidContainerData()) {
             onFluidContainerRegistration(new FluidContainerRegistry.FluidContainerRegisterEvent(tData));
         }
-        try {
+       /* try {
             for (String tOreName : OreDictionary.getOreNames()) {
                 ItemStack tOreStack;
                 for (Iterator i$ = OreDictionary.getOres(tOreName).iterator(); i$.hasNext(); registerOre(new OreDictionary.OreRegisterEvent(tOreName, tOreStack))) {
                     tOreStack = (ItemStack) i$.next();
                 }
             }
-        } catch (Throwable e) {e.printStackTrace(GT_Log.err);}
+        } catch (Throwable e) {e.printStackTrace(GT_Log.err);}*/
     }
 
     private static final void registerRecipes(OreDictEventContainer aOre) {
@@ -799,7 +799,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
         }
     }
 
-    @SubscribeEvent
+/*    @SubscribeEvent
     public void registerOre(OreDictionary.OreRegisterEvent aEvent) {
         ModContainer tContainer = Loader.instance().activeModContainer();
         String aMod = tContainer == null ? "UNKNOWN" : tContainer.getModId();
@@ -1206,7 +1206,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
             e.printStackTrace(GT_Log.err);
         }
     }
-    
+    */
     @SubscribeEvent
     public void onLivingUpdate(LivingUpdateEvent aEvent) {
         if (aEvent.entityLiving.onGround) {
