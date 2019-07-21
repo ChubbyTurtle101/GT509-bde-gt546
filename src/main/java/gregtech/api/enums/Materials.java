@@ -265,7 +265,8 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
     public static Materials Greenstone = new Materials(-1/*867*/, TextureSet.SET_DULL, 	1.0F, 0, 1, 1, 255, 255, 255, 0, "Greenstone", "Greenstone", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes.dyeGreen);
     public static Materials Greywacke = new Materials(868, TextureSet.SET_DULL, 	1.0F, 0, 1, 1, 255, 255, 255, 0, "Greywacke", "Greywacke", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes.dyeGray);
     public static Materials Haderoth = new Materials(963, TextureSet.SET_METALLIC, 10.0F, 3200, 3, 1 | 2 | 8 | 16 | 64, 119, 52, 30, 0, "Haderoth", "Haderoth", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes._NULL);
-    public static Materials Hematite = new Materials(-1, TextureSet.SET_NONE, 		1.0F, 0, 2, 1|2, 255, 255, 255, 0, "Hematite", "Hematite", 0, 0, -1, 0, false, false, 3, 1, 1, Dyes._NULL);
+    //public static Materials Hematite = new Materials(-1, TextureSet.SET_NONE, 		1.0F, 0, 2, 1|2, 255, 255, 255, 0, "Hematite", "Hematite", 0, 0, -1, 0, false, false, 3, 1, 1, Dyes._NULL);
+    public static Materials Hematite = new Materials(967, TextureSet.SET_DULL, 		1.0F, 0, 2, 1|8, 145, 90, 90, 0, "Hematite", "Hematite", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes._NULL, 1, Arrays.asList(new MaterialStack(Iron, 2), new MaterialStack(Oxygen, 3)));    
     public static Materials Hepatizon = new Materials(957, TextureSet.SET_METALLIC,12.0F, 128, 2, 1 | 2 | 8 | 16 | 64, 117, 94, 117, 0, "Hepatizon", "Hepatizon", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes._NULL);
     public static Materials HSLA = new Materials(322, TextureSet.SET_METALLIC, 		6.0F, 500, 2, 1|2|64|128, 128, 128, 128, 0, "HSLA", "HSLA Steel", 0, 0, 1811, 1000, true, false, 3, 1, 1, Dyes._NULL, Arrays.asList(new TC_Aspects.TC_AspectStack(TC_Aspects.METALLUM, 1), new TC_AspectStack(TC_Aspects.ORDO, 1)));
     public static Materials Ignatius = new Materials(950, TextureSet.SET_METALLIC, 12.0F, 512, 2, 1 | 2 | 16, 255, 169, 83, 0, "Ignatius", "Ignatius", 0, 0, -1, 0, false, false, 1, 1, 1, Dyes._NULL);
@@ -1192,9 +1193,9 @@ public class Materials implements IColorModulationContainer, ISubTagContainer {
     private static void initSubTags() {
         SubTag.ELECTROMAGNETIC_SEPERATION_NEODYMIUM.addTo(Bastnasite, Monazite, Forcicium, Forcillium);
         SubTag.ELECTROMAGNETIC_SEPERATION_GOLD.addTo(Magnetite, VanadiumMagnetite, BasalticMineralSand, GraniticMineralSand);
-        SubTag.ELECTROMAGNETIC_SEPERATION_IRON.addTo(YellowLimonite, BrownLimonite, Pyrite, BandedIron, Nickel, Vermiculite, Glauconite, GlauconiteSand, Pentlandite, Tin, Antimony, Ilmenite, Manganese, Chrome, Chromite, Andradite);
-        SubTag.BLASTFURNACE_CALCITE_DOUBLE.addTo(Pyrite, BrownLimonite, YellowLimonite, BasalticMineralSand, GraniticMineralSand, Magnetite);
-        SubTag.BLASTFURNACE_CALCITE_TRIPLE.addTo(Iron, PigIron, DeepIron, ShadowIron, WroughtIron, MeteoricIron);
+        SubTag.ELECTROMAGNETIC_SEPERATION_IRON.addTo(YellowLimonite, BrownLimonite, Pyrite, BandedIron, Hematite, Nickel, Vermiculite, Glauconite, GlauconiteSand, Pentlandite, Tin, Antimony, Ilmenite, Manganese, Chrome, Chromite, Andradite);
+        //SubTag.BLASTFURNACE_CALCITE_DOUBLE.addTo(Pyrite, BrownLimonite, YellowLimonite, BasalticMineralSand, GraniticMineralSand, Magnetite);
+        //SubTag.BLASTFURNACE_CALCITE_TRIPLE.addTo(Iron, PigIron, DeepIron, ShadowIron, WroughtIron, MeteoricIron);
         SubTag.WASHING_MERCURY.addTo(Gold, Silver, Osmium, Mithril, Platinum, Midasium, Cooperite, AstralSilver);
         SubTag.WASHING_SODIUMPERSULFATE.addTo(Zinc, Nickel, Copper, Cobalt, Cobaltite, Tetrahedrite);
         SubTag.METAL.addTo(AnyIron, AnyCopper, AnyBronze, Metal, Aluminium, Americium, Antimony, Beryllium, Bismuth, Caesium, Cerium, Chrome, Cobalt, Copper, Dysprosium, Erbium, Europium, Gadolinium, Gallium, Gold,
