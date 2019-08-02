@@ -780,6 +780,10 @@ public class GT_CraftingRecipeLoader implements Runnable {
     	GT_ModHandler.addShapelessCraftingRecipe(Materials.Fireclay.getDust(2), new Object[]{Materials.Brick.getDust(1), Materials.Clay.getDust(1)});
 
         GT_Values.RA.addFluidSolidifierRecipe(ItemList.Shape_Mold_Ball.get(0), new FluidStack(FluidRegistry.getFluid("molten.borosilicateglass"), 144), ItemList.VOLUMETRIC_FLASK.get(1), 44, 24);
-
+        
+        // Add work around recipe for hematite + calcite give Banded Iron if config is set to true
+        if (GT_Mod.gregtechproxy.mUseBandedIronAsHematiteCalcite) {
+        	GT_ModHandler.addShapelessCraftingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BandedIron, 1L), GT_ModHandler.RecipeBits.NOT_REMOVABLE, new Object[]{OrePrefixes.dust.get(Materials.Hematite), OrePrefixes.dust.get(Materials.Calcite)});        	
+        }
     }
 }
