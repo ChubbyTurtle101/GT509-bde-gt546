@@ -206,6 +206,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
     public boolean mBrickedBlastFurnace = true;
     //public boolean mMixedOreOnlyYieldsTwoThirdsOfPureOre = false;
     public boolean mUseBandedIronAsHematiteCalcite = false;
+    public boolean mUseGT6Recipes = false;
     public boolean enableBlackGraniteOres = true;
     public boolean enableRedGraniteOres = true;
     public boolean enableMarbleOres = true;

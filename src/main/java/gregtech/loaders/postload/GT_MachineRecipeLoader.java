@@ -3522,6 +3522,12 @@ if(Loader.isModLoaded("Railcraft")){
 		if (Loader.isModLoaded("Railcraft")) { 
 			GT_Values.RA.addPrimitiveBlastRecipe(Materials.CassiteriteSand.getDust(4), RailcraftToolItems.getCoalCoke(1), 2, Materials.Tin.getIngots(3), GT_Values.NI, 5400);
 		}
+		
+		// Misc Primitive Blast Furnace Recipes
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.SterlingSilver.getDust(1), GT_Values.NI, 2, Materials.SterlingSilver.getIngots(1), GT_Values.NI, 5400);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.RoseGold.getDust(1), GT_Values.NI, 2, Materials.RoseGold.getIngots(1), GT_Values.NI, 5400);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.BlackBronze.getDust(1), GT_Values.NI, 2, Materials.BlackBronze.getIngots(1), GT_Values.NI, 5400);
+		GT_Values.RA.addPrimitiveBlastRecipe(Materials.BismuthBronze.getDust(1), GT_Values.NI, 2, Materials.BismuthBronze.getIngots(1), GT_Values.NI, 5400);
 
 		//Electronic Blast Furnace Recipes
     	//int outputIngotAmount = GT_Mod.gregtechproxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre ? 2 : 3;
