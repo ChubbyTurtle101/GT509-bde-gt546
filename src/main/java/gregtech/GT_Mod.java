@@ -278,7 +278,9 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mForceFreeFace = GregTech_API.sMachineFile.get(ConfigCategories.machineconfig, "forceFreeFace",false);
         gregtechproxy.mEasierIVPlusCables = tMainConfig.get("general", "EasierIVPlusCables", false).getBoolean(false);
         gregtechproxy.mBrickedBlastFurnace = tMainConfig.get("general", "BrickedBlastFurnace", true).getBoolean(true);
-        gregtechproxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre = tMainConfig.get("general", "MixedOreOnlyYieldsTwoThirdsOfPureOre", false).getBoolean(false);
+        //gregtechproxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre = tMainConfig.get("general", "MixedOreOnlyYieldsTwoThirdsOfPureOre", false).getBoolean(false);
+        gregtechproxy.mUseBandedIronAsHematiteCalcite = tMainConfig.get("general", "UseBandedIronAsHematiteCalcite", false).getBoolean(false);
+        gregtechproxy.mUseGT6Recipes = tMainConfig.get("general", "UseGT6Recipes", false).getBoolean(false);
         gregtechproxy.enableBlackGraniteOres = GregTech_API.sWorldgenFile.get("general", "enableBlackGraniteOres", gregtechproxy.enableBlackGraniteOres);
         gregtechproxy.enableRedGraniteOres = GregTech_API.sWorldgenFile.get("general", "enableRedGraniteOres", gregtechproxy.enableRedGraniteOres);
         gregtechproxy.enableMarbleOres = GregTech_API.sWorldgenFile.get("general", "enableMarbleOres", gregtechproxy.enableMarbleOres);

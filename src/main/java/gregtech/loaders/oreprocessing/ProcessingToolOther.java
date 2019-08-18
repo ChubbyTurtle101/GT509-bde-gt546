@@ -1,5 +1,6 @@
 package gregtech.loaders.oreprocessing;
 
+import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
@@ -8,11 +9,17 @@ import net.minecraft.item.ItemStack;
 
 public class ProcessingToolOther implements gregtech.api.interfaces.IOreRecipeRegistrator {
     public ProcessingToolOther() {
+    	if (Loader.isModLoaded("gregtech")) { 
+    		return;
+    	}
         OrePrefixes.toolHeadHammer.add(this);
     }
 
     @Override
     public void registerOre(OrePrefixes aPrefix, Materials aMaterial, String aOreDictName, String aModName, ItemStack aStack) {
+    	if (Loader.isModLoaded("gregtech")) { 
+    		return;
+    	}
         if ((aMaterial != Materials.Stone) && (aMaterial != Materials.Flint)) {
             if (aMaterial != Materials.Rubber) {
                 GT_ModHandler.addCraftingRecipe(GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(GT_MetaGenerated_Tool_01.PLUNGER, 1, aMaterial, aMaterial, null), GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED, new Object[]{"xRR", " SR", "S f", 'S', OrePrefixes.stick.get(aMaterial), 'R', OrePrefixes.plate.get(Materials.Rubber)});
