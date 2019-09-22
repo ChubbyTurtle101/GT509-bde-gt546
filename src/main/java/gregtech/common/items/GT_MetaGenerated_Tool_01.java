@@ -1,6 +1,6 @@
 package gregtech.common.items;
 
-import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.*;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.*;
 import gregtech.api.items.GT_MetaGenerated_Tool;
