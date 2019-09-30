@@ -217,7 +217,8 @@ public class GT_Mod implements IGT_Mod {
             }
         }
         gregtechproxy.mMaxEqualEntitiesAtOneSpot = tMainConfig.get(aTextGeneral, "MaxEqualEntitiesAtOneSpot", 3).getInt(3);
-        gregtechproxy.mSkeletonsShootGTArrows = tMainConfig.get(aTextGeneral, "SkeletonsShootGTArrows", 16).getInt(16);
+        // Chubby Turtle change config to turn off GT arrows from 16 to 0
+        gregtechproxy.mSkeletonsShootGTArrows = tMainConfig.get(aTextGeneral, "SkeletonsShootGTArrows", 0).getInt(0);
         gregtechproxy.mFlintChance = tMainConfig.get(aTextGeneral, "FlintAndSteelChance", 30).getInt(30);
         gregtechproxy.mItemDespawnTime = tMainConfig.get(aTextGeneral, "ItemDespawnTime", 6000).getInt(6000);
         gregtechproxy.mNerfStorageBlocks = tMainConfig.get(aTextGeneral,"NerfStorageBlocks",true).getBoolean(true);
@@ -279,7 +280,8 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mEasierIVPlusCables = tMainConfig.get("general", "EasierIVPlusCables", false).getBoolean(false);
         gregtechproxy.mBrickedBlastFurnace = tMainConfig.get("general", "BrickedBlastFurnace", true).getBoolean(true);
         //gregtechproxy.mMixedOreOnlyYieldsTwoThirdsOfPureOre = tMainConfig.get("general", "MixedOreOnlyYieldsTwoThirdsOfPureOre", false).getBoolean(false);
-        gregtechproxy.mUseBandedIronAsHematiteCalcite = tMainConfig.get("general", "UseBandedIronAsHematiteCalcite", false).getBoolean(false);
+        gregtechproxy.mUseBandedIronAsHematiteCalcite = tMainConfig.get("general", "UseBandedIronAsHematiteCalcite", true).getBoolean(true);
+        gregtechproxy.mBlastFurnaceIronRecipes = tMainConfig.get("general", "AllowBlastFurnaceIronRecipes", true).getBoolean(true);
         gregtechproxy.mUseGT6Recipes = tMainConfig.get("general", "UseGT6Recipes", false).getBoolean(false);
         gregtechproxy.enableBlackGraniteOres = GregTech_API.sWorldgenFile.get("general", "enableBlackGraniteOres", gregtechproxy.enableBlackGraniteOres);
         gregtechproxy.enableRedGraniteOres = GregTech_API.sWorldgenFile.get("general", "enableRedGraniteOres", gregtechproxy.enableRedGraniteOres);
