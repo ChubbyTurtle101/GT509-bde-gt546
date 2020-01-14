@@ -11,6 +11,7 @@ import gregtech.api.enchants.Enchantment_EnderDamage;
 import gregtech.api.enchants.Enchantment_Radioactivity;
 import gregtech.api.enums.*;
 import gregtech.api.interfaces.internal.IGT_Mod;
+import gregtech.api.interfaces.tileentity.IHasWorldObjectAndCoords;
 import gregtech.api.objects.ItemData;
 import gregtech.api.objects.MaterialStack;
 import gregtech.api.objects.XSTR;
@@ -80,6 +81,7 @@ public class GT_Mod implements IGT_Mod {
     }
 
     public GT_Mod() {
+    	IHasWorldObjectAndCoords.class.getName();
         try {
             Class.forName("ic2.core.IC2").getField("enableOreDictCircuit").set(null, Boolean.FALSE);
         } catch (Throwable e) {
