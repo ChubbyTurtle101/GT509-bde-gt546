@@ -169,7 +169,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
     public boolean mHideRecyclingRecipes = true;
     public boolean mPollution = true;
     public boolean mExplosionItemDrop = false;
-    public int mSkeletonsShootGTArrows = 16;
+    public int mSkeletonsShootGTArrows = 0;
     public int mMaxEqualEntitiesAtOneSpot = 3;
     public int mFlintChance = 30;
     public int mItemDespawnTime = 6000;
@@ -205,7 +205,8 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
     public boolean mEasierIVPlusCables = false;
     public boolean mBrickedBlastFurnace = true;
     //public boolean mMixedOreOnlyYieldsTwoThirdsOfPureOre = false;
-    public boolean mUseBandedIronAsHematiteCalcite = false;
+    public boolean mUseBandedIronAsHematiteCalcite = true;
+    public boolean mBlastFurnaceIronRecipes = true;
     public boolean mUseGT6Recipes = false;
     public boolean enableBlackGraniteOres = true;
     public boolean enableRedGraniteOres = true;
