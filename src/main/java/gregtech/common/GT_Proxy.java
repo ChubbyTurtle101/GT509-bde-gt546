@@ -808,13 +808,13 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
         String aMod = tContainer == null ? "UNKNOWN" : tContainer.getModId();
         String aOriginalMod = aMod;
         if (GT_OreDictUnificator.isRegisteringOres()) {
-            aMod = "gregtech5";
-        } else if (aMod.equals("gregtech5")) {
+            aMod = "gregtech";
+        } else if (aMod.equals("gregtech")) {
             aMod = "UNKNOWN";
         }
         if ((aEvent == null) || (aEvent.Ore == null) || (aEvent.Ore.getItem() == null) || (aEvent.Name == null) || (aEvent.Name.isEmpty())
                 || (aEvent.Name.replaceAll("_", "").length() - aEvent.Name.length() == 9)) {
-            if (aOriginalMod.equals("gregtech5")) {
+            if (aOriginalMod.equals("gregtech")) {
                 aOriginalMod = "UNKNOWN";
             }
             GT_Log.ore
@@ -835,12 +835,7 @@ public abstract class GT_Proxy implements IGT_Mod, IGuiHandler, IFuelHandler {
                     return;
                 }
             }
-        	// Attempt to disable GT5 drops from GT6 ores
-        	if (Loader.isModLoaded("gregtech")) { 
-        		GT_Log.ore.println(aMod + " -> " + aEvent.Name + " is getting skipped due to GT6 being loaded");
-        		return;
-        	}
-           String tModToName = aMod + " -> " + aEvent.Name;
+            String tModToName = aMod + " -> " + aEvent.Name;
             if ((this.mOreDictActivated) || (GregTech_API.sPostloadStarted) || ((this.mSortToTheEnd) && (GregTech_API.sLoadFinished))) {
                 tModToName = aOriginalMod + " --Late--> " + aEvent.Name;
             }

@@ -11,6 +11,7 @@ import gregtech.api.enchants.Enchantment_EnderDamage;
 import gregtech.api.enchants.Enchantment_Radioactivity;
 import gregtech.api.enums.*;
 import gregtech.api.interfaces.internal.IGT_Mod;
+import gregtech.api.interfaces.tileentity.IHasWorldObjectAndCoords;
 import gregtech.api.objects.ItemData;
 import gregtech.api.objects.MaterialStack;
 import gregtech.api.objects.XSTR;
@@ -59,14 +60,14 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Mod(modid = "gregtech5", name = "GregTech 5", version = "MC1710", useMetadata = false, dependencies = "required-after:IC2; after:Forestry; after:PFAAGeologica; after:Thaumcraft; after:Railcraft; after:appliedenergistics2; after:ThermalExpansion; after:TwilightForest; after:harvestcraft; after:magicalcrops; after:BuildCraft|Transport; after:BuildCraft|Silicon; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Core; after:BuildCraft|Builders; after:GalacticraftCore; after:GalacticraftMars; after:GalacticraftPlanets; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:RedPowerCore; after:RedPowerBase; after:RedPowerMachine; after:RedPowerCompat; after:RedPowerWiring; after:RedPowerLogic; after:RedPowerLighting; after:RedPowerWorld; after:RedPowerControl; after:UndergroundBiomes; before:gregtech;")
+@Mod(modid = "gregtech", name = "GregTech", version = "MC1710", useMetadata = false, dependencies = "required-after:IC2; after:Forestry; after:PFAAGeologica; after:Thaumcraft; after:Railcraft; after:appliedenergistics2; after:ThermalExpansion; after:TwilightForest; after:harvestcraft; after:magicalcrops; after:BuildCraft|Transport; after:BuildCraft|Silicon; after:BuildCraft|Factory; after:BuildCraft|Energy; after:BuildCraft|Core; after:BuildCraft|Builders; after:GalacticraftCore; after:GalacticraftMars; after:GalacticraftPlanets; after:ThermalExpansion|Transport; after:ThermalExpansion|Energy; after:ThermalExpansion|Factory; after:RedPowerCore; after:RedPowerBase; after:RedPowerMachine; after:RedPowerCompat; after:RedPowerWiring; after:RedPowerLogic; after:RedPowerLighting; after:RedPowerWorld; after:RedPowerControl; after:UndergroundBiomes;")
 public class GT_Mod implements IGT_Mod {
     public static final int VERSION = 509, SUBVERSION = 31;
     public static final int TOTAL_VERSION = calculateTotalGTVersion(VERSION, SUBVERSION);
     public static final int REQUIRED_IC2 = 624;
-    @Mod.Instance("gregtech5")
     public static GT_Mod instance;
-    @SidedProxy(modId = "gregtech5", clientSide = "gregtech.common.GT_Client", serverSide = "gregtech.common.GT_Server")
+    @Mod.Instance("gregtech")
+    @SidedProxy(modId = "gregtech", clientSide = "gregtech.common.GT_Client", serverSide = "gregtech.common.GT_Server")
     public static GT_Proxy gregtechproxy;
     public static int MAX_IC2 = 2147483647;
     public static GT_Achievements achievements;
@@ -80,6 +81,7 @@ public class GT_Mod implements IGT_Mod {
     }
 
     public GT_Mod() {
+    	IHasWorldObjectAndCoords.class.getName();
         try {
             Class.forName("ic2.core.IC2").getField("enableOreDictCircuit").set(null, Boolean.FALSE);
         } catch (Throwable e) {
@@ -233,12 +235,12 @@ public class GT_Mod implements IGT_Mod {
         gregtechproxy.mSurvivalIntoAdventure = tMainConfig.get(aTextGeneral, "forceAdventureMode", false).getBoolean(false);
         gregtechproxy.mHungerEffect = tMainConfig.get(aTextGeneral, "AFK_Hunger", false).getBoolean(false);
         gregtechproxy.mHardRock = tMainConfig.get(aTextGeneral, "harderstone", false).getBoolean(false);
-        gregtechproxy.mInventoryUnification = tMainConfig.get(aTextGeneral, "InventoryUnification", false).getBoolean(false);
+        gregtechproxy.mInventoryUnification = tMainConfig.get(aTextGeneral, "InventoryUnification", true).getBoolean(true);
         gregtechproxy.mGTBees = tMainConfig.get(aTextGeneral, "GTBees", true).getBoolean(true);
         gregtechproxy.mCraftingUnification = tMainConfig.get(aTextGeneral, "CraftingUnification", true).getBoolean(true);
         gregtechproxy.mNerfedWoodPlank = tMainConfig.get(aTextGeneral, "WoodNeedsSawForCrafting", true).getBoolean(true);
         gregtechproxy.mNerfedVanillaTools = tMainConfig.get(aTextGeneral, "smallerVanillaToolDurability", true).getBoolean(true);
-        gregtechproxy.mSortToTheEnd = tMainConfig.get(aTextGeneral, "EnsureToBeLoadedLast", false).getBoolean(false);
+        gregtechproxy.mSortToTheEnd = tMainConfig.get(aTextGeneral, "EnsureToBeLoadedLast", true).getBoolean(true);
         gregtechproxy.mDisableIC2Cables = tMainConfig.get(aTextGeneral, "DisableIC2Cables", true).getBoolean(true);
         gregtechproxy.mAchievements = tMainConfig.get(aTextGeneral, "EnableAchievements", true).getBoolean(true);
         gregtechproxy.mAE2Integration = GregTech_API.sSpecialFile.get(ConfigCategories.general, "EnableAE2Integration", Loader.isModLoaded("appliedenergistics2"));
@@ -623,7 +625,7 @@ public class GT_Mod implements IGT_Mod {
         new GT_MachineRecipeLoader().run();
         new GT_ScrapboxDropLoader().run();
         new GT_CropLoader().run();
-        //new GT_Worldgenloader().run();
+        new GT_Worldgenloader().run();
         new GT_CoverLoader().run();
         new GT_AE2EnergyTunnelLoader().run();
         LoadArmorComponents.init();

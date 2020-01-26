@@ -1,6 +1,5 @@
 package gregtech.loaders.oreprocessing;
 
-import cpw.mods.fml.common.Loader;
 import gregtech.api.enums.*;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -11,9 +10,6 @@ import net.minecraft.item.ItemStack;
 
 public class ProcessingToolHead implements gregtech.api.interfaces.IOreRecipeRegistrator {
     public ProcessingToolHead() {
-    	if (Loader.isModLoaded("gregtech")) { 
-    		return;
-    	}
         OrePrefixes.toolHeadArrow.add(this);
         OrePrefixes.toolHeadAxe.add(this);
         OrePrefixes.toolHeadBuzzSaw.add(this);
@@ -35,10 +31,6 @@ public class ProcessingToolHead implements gregtech.api.interfaces.IOreRecipeReg
 
     @Override
     public void registerOre(OrePrefixes aPrefix, Materials aMaterial, String aOreDictName, String aModName, ItemStack aStack) {
-    	if (Loader.isModLoaded("gregtech")) { 
-    		return;
-    	}
-
         boolean aSpecialRecipeReq1 = aMaterial.mUnificatable && (aMaterial.mMaterialInto == aMaterial) && !aMaterial.contains(SubTag.NO_SMASHING);
         boolean aSpecialRecipeReq2 = aMaterial.mUnificatable && (aMaterial.mMaterialInto == aMaterial) && !aMaterial.contains(SubTag.NO_WORKING);
         boolean aNoWorking = aMaterial.contains(SubTag.NO_WORKING);
